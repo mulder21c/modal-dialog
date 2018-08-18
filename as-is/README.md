@@ -6,7 +6,7 @@
 3. 닫기 버튼을 누른다.
 4. 팝업이 닫힌다.
 
-![대화 상자 구현 결과 스크린샷](/images/visual-only.gif)
+![대화 상자 구현 결과 스크린샷](../images/visual-only.gif)
 
 ## 문제점
 
@@ -61,4 +61,4 @@
 - title 속성(attribute) 값은 SR 설정에 따라 읽지 않을 수 있음
 - 대화 상자를 벗어나는 SR 문서 탐색
 
-<video src="/video/nvda-test.webm" width="100%" controls="controls"></video>
+<video src="../video/nvda-test.webm" width="100%" controls="controls"></video>

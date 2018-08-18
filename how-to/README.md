@@ -485,7 +485,7 @@ function closeModal (event) {
 대화 상자를 만들 때 접근성 이슈에 관하여 종종 놓치는 부분 중 하나가 화면 확대에 대한 부분입니다. 물론 이 부분은 
 꼭 화면 확대가 아니더라도 작은 스크린 해상도에서도 발생될 수 있는 이슈에 속하기도 합니다.
 
-<video src="/video/zoom-test.webm" width="100%" controls="controls"></video>
+<video src="../video/zoom-test.webm" width="100%" controls="controls"></video>
 
 실습 예제에는 이미 해당 이슈가 어느 정도 해결이 되어 있고 해결 방법이 상황에 따라 달라지기 때문에 해결을 위한 별도의
 작업이 소개되지는 않습니다.
