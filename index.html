@@ -1,0 +1,495 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>더 접근 가능한 Modal Window · Accessible Modal Dialog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="mulder21c">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-xonokai.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="./" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./#더-접근-가능한-modal-window">
+            
+                    
+                    더 접근 가능한 Modal Window
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="./">
+            
+                <a href="./#시작하기-전에">
+            
+                    
+                    시작하기 전에...
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="as-is/">
+            
+                <a href="as-is/">
+            
+                    
+                    접근성 문제
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.1" data-path="as-is/">
+            
+                <a href="as-is/#대다수의-대화-상자-구현-방식">
+            
+                    
+                    대다수의 대화 상자 구현 방식
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.2" data-path="as-is/">
+            
+                <a href="as-is/#문제점">
+            
+                    
+                    문제점
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.3" data-path="as-is/">
+            
+                <a href="as-is/#과거의-해결-방법">
+            
+                    
+                    과거의 해결 방법
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.4" data-path="as-is/">
+            
+                <a href="as-is/#여전히-해결되지-않는-문제">
+            
+                    
+                    여전히 해결되지 않는 문제
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="to-be/">
+            
+                <a href="to-be/">
+            
+                    
+                    접근성 향상 시키기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.3.1" data-path="to-be/">
+            
+                <a href="to-be/#키보드-접근성">
+            
+                    
+                    키보드 접근성
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.2" data-path="to-be/">
+            
+                <a href="to-be/#적절한-의미-제공">
+            
+                    
+                    적절한 의미 제공
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="how-to/">
+            
+                <a href="how-to/">
+            
+                    
+                    How to
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.4.1" data-path="how-to/">
+            
+                <a href="how-to/#step-1-적절한-의미-제공">
+            
+                    
+                    Step 1. 적절한 의미 제공
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.2" data-path="how-to/">
+            
+                <a href="how-to/#step-2-대화-상자가-열리면-초점을-대화-상자에-포함-된-요소로-이동">
+            
+                    
+                    Step 2. 대화 상자가 열리면 초점을 대화 상저에 포함 된 요소로 이동
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.3" data-path="how-to/">
+            
+                <a href="how-to/#step-3-대화-상자-내부로-키보드-trapping">
+            
+                    
+                    Step 3. 대화 상자 내부로 키보드 trapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.4" data-path="how-to/">
+            
+                <a href="how-to/#step-4-대화-상자-외부로-탐색-제한">
+            
+                    
+                    Step 4. 대화 상자 외부로 탐색 제한
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.5" data-path="how-to/">
+            
+                <a href="how-to/#step-5-대화-상자가-닫히면-대화-상자가-열릴-때-마지막-위치했던-초점으로-이동">
+            
+                    
+                    Step 5. 대화 상자가 닫히면, 대화 상자가 열릴 때 마지막 위치했던 초점으로 이동
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.6" data-path="how-to/">
+            
+                <a href="how-to/#step-6-추가적인-이슈-사항-정리">
+            
+                    
+                    Step 6. 추가적인 이슈 사항 정리
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >더 접근 가능한 Modal Window</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#xB354;-&#xC811;&#xADFC;-&#xAC00;&#xB2A5;&#xD55C;-modal-windowdialog">&quot;&#xB354;&quot; &#xC811;&#xADFC; &#xAC00;&#xB2A5;&#xD55C; Modal Window(Dialog)</h1>
+<h2 id="what-is-modal-window">What is Modal Window?</h2>
+<blockquote>
+<p> &#xC0AC;&#xC6A9;&#xC790; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xB514;&#xC790;&#xC778; &#xAC1C;&#xB150;&#xC5D0;&#xC11C; &#xC790;&#xC2DD; &#xC708;&#xB3C4;&#xC5D0;&#xC11C; &#xBD80;&#xBAA8; &#xC708;&#xB3C4;&#xB85C; &#xB3CC;&#xC544;&#xAC00;&#xAE30; &#xC804;&#xC5D0; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC0C1;&#xD638;&#xB3D9;&#xC791;&#xC744; &#xC694;&#xAD6C;&#xD558;&#xB294; &#xCC3D;&#xC744; &#xB9D0;&#xD55C;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; &#xC751;&#xC6A9; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758; &#xC8FC; &#xCC3D;&#xC758; &#xC791;&#xC5C5; &#xD750;&#xB984;&#xC744; &#xBC29;&#xD574;&#xD55C;&#xB2E4;. &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xBAA8;&#xB2EC; &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB85C; &#xBD88;&#xB9AC;&#xB294;&#xB370;, &#xADF8; &#xC774;&#xC720;&#xB294; &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB97C; &#xBD80;&#xB97C; &#xB54C; &#xD754;&#xD788; &#xC0AC;&#xC6A9;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;. &#xC6B0;&#xB9AC;&#xAC00; &#xC790;&#xC8FC; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xD30C;&#xC77C; &#xC5F4;&#xAE30;/&#xC800;&#xC7A5; &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB97C; &#xC0DD;&#xAC01;&#xD558;&#xBA74; &#xC774;&#xD574;&#xD558;&#xAE30; &#xC27D;&#xB2E4;.</p>
+<p>&#xBAA8;&#xB2EC; &#xCC3D;&#xB4E4;&#xC740; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xBA85;&#xB839;&#xC744; &#xC778;&#xC2DD;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB098;, &#xAE34;&#xAE09; &#xC0C1;&#xD669;&#xC744; &#xC54C;&#xB9AC;&#xAE30; &#xC704;&#xD574; &#xB9CE;&#xC774; &#xC0AC;&#xC6A9;&#xB41C;&#xB2E4;. &#xC6F9;&#xC5D0;&#xC11C;&#xB294; &#xC774;&#xBBF8;&#xC9C0; &#xC791;&#xC5C5;&#xC744; &#xC608;&#xB85C; &#xB4E0;&#xB2E4;&#xBA74; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xC790;&#xC138;&#xD558;&#xAC8C; &#xBCFC; &#xB54C; &#xC790;&#xC8FC; &#xC0AC;&#xC6A9;&#xB41C;&#xB2E4;.</p>
+</blockquote>
+<p><img src="images/modal-screenshot.png" alt="modal dialog example screenshot"></p>
+<h2 id="&#xC2DC;&#xC791;&#xD558;&#xAE30;-&#xC804;&#xC5D0;">&#xC2DC;&#xC791;&#xD558;&#xAE30; &#xC804;&#xC5D0;...</h2>
+<ul>
+<li>&#xC774; &#xAC15;&#xC758;&#xB294; Code Lab &#xD615;&#xD0DC;&#xB85C; &#xC9C4;&#xD589;&#xB418;&#xBA70;,</li>
+<li>JavaScript&#xB294; &#xB9CE;&#xC740; &#xBD84;&#xB4E4;&#xC758; &#xC774;&#xD574;&#xB97C; &#xB3D5;&#xAE30; &#xC704;&#xD574; ES5 &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xC124;&#xBA85;&#xB418;&#xBA70;, &#xC808;&#xCC28;&#xC801; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC744; &#xB530;&#xB77C; &#xC124;&#xBA85;&#xB429;&#xB2C8;&#xB2E4;.</li>
+<li><p>&#xC2E4;&#xC2B5;&#xC744; &#xC704;&#xD55C; &#xC608;&#xC81C; &#xD30C;&#xC77C;&#xC740; &#xC544;&#xB798; &#xC8FC;&#xC18C;&#xC5D0;&#xC11C; &#xBC1B;&#xC73C;&#xC2E4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><p>&#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;</p>
+<ul>
+<li>Git &#xC0AC;&#xC6A9;&#xC790; <pre class="language-"><code class="lang-git"><span class="token command">$ git clone https://github.com/niawa/AOA.git</span>
+</code></pre>
+</li>
+<li>Direct Download:<br><a href="https://github.com/niawa/aoa" target="_blank"><span class="fa fa-github" aria-hidden="true"></span> &#xC811;&#xADFC;&#xC131; &#xC624;&#xD508; &#xC544;&#xCE74;&#xB370;&#xBBF8; GitHub (https://github.com/niawa/aoa)</a></li>
+</ul>
+</li>
+<li><p>&#xC2E4;&#xC2B5; &#xD30C;&#xC77C; &#xC2E4;&#xD589;</p>
+<ul>
+<li><p>Node.js &#xC0AC;&#xC6A9;&#xC790;</p>
+<p>Node.js &#xAC1C;&#xBC1C; &#xD658;&#xACBD;&#xC774; &#xAD6C;&#xCD95;&#xB418;&#xC5B4; &#xC788;&#xB294; &#xBD84;&#xC740; &#xD328;&#xD0A4;&#xC9C0; &#xC124;&#xCE58; &#xD6C4; <code>npm start</code>&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; livereload&#xAC00; &#xC801;&#xC6A9;&#xB418;&#xC5B4; &#xC788;&#xB294; 
+&#xB85C;&#xCEEC; &#xC6F9;&#xC11C;&#xBC84;&#xAC00; &#xC790;&#xB3D9; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">cd</span> 2018/09.07/
+
+$ <span class="token function">npm</span> <span class="token function">install</span>
+
+$ <span class="token function">npm</span> start
+</code></pre>
+</li>
+<li>&#xAC1C;&#xBC1C; &#xD658;&#xACBD;&#xC774; &#xAD6C;&#xCD95;&#xB418;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xC740; &#xBD84;&#xC758; &#xACBD;&#xC6B0;<br><code>2018/09.07/source/index.html</code> &#xD30C;&#xC77C;&#xC744; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C; &#xBC14;&#xB85C; &#xC5F4;&#xC5B4;&#xC11C; &#xD655;&#xC778; &#xD558;&#xC2E4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. 
+(&#xB2E8;, &#xD30C;&#xC77C; &#xC218;&#xC815; &#xC2DC; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xAC31;&#xC2E0;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBBC0;&#xB85C; &#xC218;&#xB3D9;&#xC73C;&#xB85C; &#xAC31;&#xC2E0;&#xD558;&#xC5EC; &#xD655;&#xC778;&#xD558;&#xC154;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="./#시작하기-전에" class="navigation navigation-next navigation-unique" aria-label="Next page: 시작하기 전에...">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"더 접근 가능한 Modal Window","level":"1.1","depth":1,"next":{"title":"시작하기 전에...","level":"1.1.1","depth":2,"anchor":"#시작하기-전에","path":"README.md","ref":"README.md#시작하기-전에","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["syntax-highlighting/assets/css/prism/prism-xonokai.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"mulder21c","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Accessible Modal Dialog","gitbook":"*","description":"2018 Accessibility Open Academy"},"file":{"path":"README.md","mtime":"2018-08-18T11:25:39.913Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-18T11:26:10.213Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
