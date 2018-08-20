@@ -4,15 +4,15 @@
 
 `aria-haspopup` 사용 (see. [WAI-ARIA 1.1](https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup) )
 
-요소(element)에 의해 호출 될 수 있는 메뉴나 대화상자 같은 팝업 요소의 가용성과 형태를 나타내는데 사용되는 aria
+요소(element)에 의해 호출 될 수 있는 요소의 사용 가능성과 형태(메뉴나 대화상자 같은 팝업)를 나타내는데 사용되는 aria
 속성(property).
 
-WAI-ARIA 1.0에서는 `aria-haspopup`은 [true|false] 값만으로 정의 되어있었으나, WAI-ARIA 1.1에서
-[false|true|menu|listbox|tree|grid|dialog]로 변경 되었습니다.
+WAI-ARIA 1.0에는 `aria-haspopup`은 [`true`|`false`] 값만으로 정의 되어있었으나, WAI-ARIA 1.1에서는 
+[`false`|`true`|`menu`|`listbox`|`tree`|`grid`|`dialog`]로 변경 되었습니다.
 
 현재 시점에서 대다수의 보조기술들이 WAI-ARIA 1.1 명세의 각 값들이 구현되지 않은 것으로 보고되어 있기 때문에 (대부분의
 보조기술들이 1.0 명세에서 의도되었던 팝업 컨텍스트 메뉴 혹은 하위 메뉴로 사용), `aria-haspopup="dialog"`를
-단독으로 사용하는 것은 인식의 혼동을 가져올 수 있기 때문에 `title` 속성과 병행하는 것을 추천 합니다.
+단독으로 사용하는 것은 인식의 혼동을 가져올 수 있으므로 `title` 속성과 병행하는 것을 추천 합니다.
 
 As-Is
 
@@ -34,8 +34,7 @@ To-Be
 
 `role`을 이용하여 "dialog" 의미 부여.
 
-> 대화 상자는 사용자가 정보를 입력하거나 응답하도록하는 데 가장 자주 사용됩니다. 워크 플로를 방해하도록 설계된 대화
-> 상자는 대개 모달입니다.
+> 대화 상자는 사용자가 정보를 입력하거나 응답하도록하는 데 가장 자주 사용됩니다. 
 
 > 작성자는 `aria-label` 또는 `aria-labelledby` 속성을 사용하여 대화 상자 레이블을 제공해야(should)합니다 .
 
@@ -72,13 +71,13 @@ To-Be
 
 > 요소가 "모달"인지 여부를 나타냄
 
-> aria-modal 속성은 "모달" 요소의 존재가 페이지에서 다른 콘텐츠의 사용을 배제하는데 사용됩니다. 예를 들어, 모달
-> 대화 상자가 표시되는 경우, 모달 대화 상자가 초점을 잃거나 더 이상 표기되지 않을 때까지 대화상자의 콘텐츠로
-> 사용자 인터랙션을 제한될 것으로 기대됩니다.
+> aria-modal 속성은 "모달" 요소가 존재할 때, 다른 콘텐츠의 사용을 배제시키는데 사용됩니다. 예를 들어 모달
+> 대화 상자가 나타나는 경우, 모달 대화 상자가 초점을 잃거나 사라질 때까지 사용자 인터랙션을 대화상자의 콘텐츠로 
+> 제한될 것입니다.
 
-> **[- Accessible Rich Internet Applications (WAI-ARIA) 1.1](https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup)**
+> **[- Accessible Rich Internet Applications (WAI-ARIA) 1.1](https://www.w3.org/TR/wai-aria-1.1/#aria-modal)**
 
-But... 아직 aria-modal을 지원하는 AT가 많지 않기 때문에 사용자 인터랙션의 제한 처리가 병행 되어야...
+But... 아직 aria-modal을 지원하는 보조기술이 많지 않기 때문에 사용자 인터랙션의 제한 수동 처리가 병행 되어야...
 
 As-Is
 
@@ -106,69 +105,50 @@ To-Be
 앞서 보았던 키보드 접근성 요구사항을 다시 보면,
 
 > - 초점을 대화 상자에 포함 된 요소로 이동
-> - 다른 방법을 사용하는 것이 바람직한 조건이 아니라면 초점은 처음에 포커스가 있는 첫 번째 요소에 설정
-> - 첫 번째 상호 작용 요소를 중점으로하는 콘텐츠의 크기가 커서 시작 부분을 스크롤 할 수 없게 만들 수있는 경우
->   대화 상자 제목이나 첫 번째 단락과 같은 대화 상자의 맨 위에있는 정적 요소에 `tabindex=-1` 을 추가하여
->   해당 요소로 초점 이동
-> - 대화 상자가 추가 정보를 제공하거나 처리를 계속하는 상호 작용으로 제한되는 경우 가장 자주 사용되는 요소 (예 :
->   확인 또는 계속 버튼)에 초점을 설정하는 것이 좋음
+> - 다른 요소로 초점을 이동시키는 것이 적절하지 않은 한, 초점을 얻을 수 있는 첫 번째 요소로 초점 이동
+> - 초점을 얻을 수 있는 첫 번째 요소의 콘텐츠 크기가 커서 스크롤을 해야 볼 수 있다면, 대화 상자 제목이나 첫 
+    단락과 같은 대화 상자의 맨 위에있는 정적 요소에 `tabindex=-1` 을 추가하여 해당 요소로 초점 이동
+> - 대화 상자의 용도가 추가 정보를 제공하거나 처리를 계속하도록 하는 인터랙션으로 제한되는 경우, 가장 자주 
+    사용되는 요소 (예: 확인 또는 계속 버튼)에 초점을 설정하는 것이 좋음
 
-일반적인 경우에는 첫 번째 항목의 것과 같이 첫 번째 입력 상자인 "제목"에 해당하는 `input` 요소로 초점을 주면 되지만,
-본 실습에서는 입력 양식 이전에 존재하는 안내 문구를 반드시 인지하도록 하는 요구사항이 있다는 가정으로 진행해 보도록
-하겠습니다.
-
-초점이 첫 번째 입력 상자로 이동될 경우, 보다 앞서 위치되어 있는 안내 문구를 낭독하지 않고 건너 뛰기 때문에 안내문구
-보다 앞선 위치에 placeholder 역할을 해 줄 빈 a 요소를 추가하여 해당 요소로 초점을 이동시키도록 합니다.
-
-최초 대화 상자가 열릴 때에만 필요한 요소이기 때문에, `tabindex=-1`을 추가하여 JavaScript에 의해서만 초점을 얻을
-수 있도록 하고, 이후 `tab`키에 의한 초점 이동에는 대응되지 않도록 합니다.
+이 조건에 따라, 실습 예제에는 초점을 얻을 수 있는 첫 번째 요소가 `input[type="text"]`이고, 여기로 이동 시키는 
+것이 부적절하지 않으므로 이 요소로 초점을 이동시킵니다.
 
 As-Is
-
-```html
-<div id="voc-dialog" class="layer-popup">
-    <div class="dialog" role="dialog" aria-label="문의 메일 작성">
-      <div class="dialog-header"></div>
-```
 
 ```javascript
 function openModal (event) {
   ...
-  modal.classList.add('open');
+  document.body.style.top = (document.documentElement.scrollTop || document.body.scrollTop) * -1 + 'px';
+  document.documentElement.classList.add('in-modal');
 }
 ```
 
 to-Be
 
-```html
-<div id="voc-dialog" class="layer-popup">
-    <div class="dialog" role="dialog" aria-label="문의 메일 작성">
-      <a id="dialog-placeholder" tabindex="-1"></a>
-      <div class="dialog-header"></div>
-```
-
 ```javascript
 function openModal (event) {
   ...
-  modal.classList.add('open');
+  document.body.style.top = (document.documentElement.scrollTop || document.body.scrollTop) * -1 + 'px';
+  document.documentElement.classList.add('in-modal');
 
-  // placeholder 역할을 해 주는 요소를 찾아서
-  var placeholder = modal.querySelector('#dialog-placeholder');
+  // 첫 번째 input 요소를 찾아서
+  var firstTabbaleEl = modal.querySelector('#subject');
 
   // 요소로 초점 이동
-  placeholder.focus();
+  firstTabbaleEl.focus();
 }
 ```
 
 ## Step 3. 대화 상자 내부로 키보드 trapping
 
 > - `tab` :
->   + 초점을 대화 상자 안의 다음 tabbable 요소로 이동
->   + 초점이 대화 상자의 마지막 tabbable 요소에 있는 경우 초점을 대화 상자의 첫 번째 tabbable 요소로 이동
+>   + 대화 상자 안의 키보드로 초점을 얻을 수 있는 다음 요소로 이동
+>   + 초점이 대화 상자의 초점을 얻을 수 있는 마지막 요소에 있는 경우, 초점을 대화 상자의 첫 번째 초점을 얻을 수 있는 요소로 이동
 
 > - `shift` + `tab` :
->   + 대화 상자 내의 이전 tabbable 요소로 이동
->   + 초점이 대화 상자의 첫 번째 tabbable 요소에 있는 경우 초점을 대화 상자의 마지막 tabbable 요소로 이동
+>   + 대화 상자 안의 초점을 얻을 수 있는 이전 요소로 이동
+>   + 초점이 대화 상자의 초점을 얻을 수 있는 첫 번째 요소에 있는 경우, 초점을 대화 상자의 마지막 초점을 얻을 수 있는 요소로 이동
 
 As-Is
 
@@ -208,15 +188,17 @@ function bindeKeyEvt(event) {
       closeModal(event);
       break;
     case 9:   // tab key
-      // 탭 키가 눌린 요소가 마지막 요소이고, Shift 키가 눌리지 않았다면
+      // 탭 키가 눌린 요소가 초점을 얻을 수 있는 마지막 요소이고, Shift 키가 눌리지 않았다면
+      // 즉, 초점을 얻을 수 있는 마지막 요소에서 tab을 눌렀다면,
       if (currEl === lastTabbableEl && !event.shiftKey) {
-        // 기본 동작을 막고 첫 번째 탭 가능한 요소로 초점 이동
+        // 기본 동작을 막고 초점을 얻을 수 있는 첫 번째 요소로 초점 이동
         event.preventDefault();
         firstTabbableEl.focus();
       }
-      // 탭 키가 눌린 요소가 마지막 요소이고, Shift 키가 눌렸다면
+      // 탭 키가 눌린 요소가 초점을 얻을 수 있는 첫 번째 요소이고, Shift 키가 눌렸다면
+      // 즉, 초점을 얻을 수 있는 첫 번째 요소에서 shift + tab을 눌렀다면,
       if (currEl === firstTabbableEl && event.shiftKey ) {
-        // 기본 동작을 막고 마지막 탭 가능한 요소로 초점 이동
+        // 기본 동작을 막고 초점을 얻을 수 있는 마지막 요소로 초점 이동
         event.preventDefault();
         lastTabbableEl.focus();
       }
@@ -229,9 +211,9 @@ function bindeKeyEvt(event) {
 
 ## Step 4. 대화 상자 외부로 탐색 제한
 
-`role="dialog"`와 `aria-modal="true"`가 이 역할을 해주도록 제안되어 있지만 아직 미구현된 부분이나 오류가 발생되는
-부분이 있고, HTML에서의 inert 속성 역시 아직 초안 단계에 머물러 있기 때문에 대화 상자 외부로의 탐색을 막기 위해서는
-다른 방법이 필요합니다.
+`role="dialog"`와 `aria-modal="true"`가 이 역할을 해주도록 제안되어 있지만 아직 보조 기술의 미구현된 부분이 있고, 
+HTML 5에서의 inert에 대한 컨셉이 제안되어 있으나 역시 아직 초안 단계에 머물러 있기 때문에 대화 상자 외부로의 탐색을 
+막기 위해서는 다른 방법이 필요합니다.
 
 > 노드가 비활성(inert)인 경우, 유저 에이전트는 유저 인터랙션 이벤트들을 타겟팅 할 목적에 대해 노드가 없는 것 처럼
 > 수행해야(must) 하고, 텍스트 검색 유저 인터페이스에 대해 무시할 수 있으며, 사용자가 그 노드 내의 텍스트를 선택하는
@@ -242,14 +224,13 @@ function bindeKeyEvt(event) {
 > cf.) [Google inert](https://github.com/GoogleChrome/inert-polyfill),
 > [WICG inert](https://github.com/WICG/inert)
 
-보통 모달 대화 상자를 구현할 경우 diemed 레이어로 바탕 페이지에 대한 접근을 막아두고 대화 상자를 만드는 방법을 통해
-일부 차단하고 있으나, 스크린리더와 같은 키보드 접근에 대해서는 이 구현 방법은 적용되지 않기 때문에 inert와 상응하는
-방법으로 `aria-hidden`을 사용합니다. <br>
+보통 모달 대화 상자를 구현할 경우 딤드(diemed) 레이어를 바탕 페이지 위로 띄우고 그 위로 대화 상자를 만드는 방법을 통해
+바탕 페이지에 대한 접근을 차단하고 있으나, 스크린리더와 같은 키보드 접근에 대해서는 이 구현 방법은 적용되지 않기 때문에 
+inert와 상응하는 방법으로 `aria-hidden`을 사용 할 수 있습니다. 
 
 단, 모달 대화 상자는 `aria-hidden`에 의해 제한되지 않아야 하므로 `aria-hidden`이 설정된 요소의 하위 요소가
-아니어야 합니다.
-
-따라서, 개발 편의 상 가급적 dialog 요소를 level 1 수준으로 위치시키는 것이 정신건강에 좋습니다 :)
+아니어야 합니다.  
+따라서, 개발 편의 상 가급적 dialog 요소를 중첩 수준을 `body` 요소의 바로 아래로 위치시키는 것이 정신건강에 좋습니다 :)
 
 우선, 대화 상자가 열릴 때 대화 상자 외 타 요소로의 탐색을 제한하기 위해 타 요소를 비활성화 합니다.
 
@@ -258,12 +239,9 @@ As-Is
 ```javascript
 function openModal (event) {
   ...
-  if(!modal) return;
-  if(btnClose)
-    btnClose.addEventListener('click', closeModal, false);
-  document.addEventListener("keydown", bindeKeyEvt, false);
-  modal.classList.add('open');
-  placeholder.focus();
+  document.body.style.top = (document.documentElement.scrollTop || document.body.scrollTop) * -1 + 'px';
+  document.documentElement.classList.add('in-modal');
+  firstTabbaleEl.focus();
 }
 ```
 
@@ -271,14 +249,11 @@ To-Be
 ```javascript
 function openModal (event) {
   ...
-  if(!modal) return;
-  if(btnClose)
-    btnClose.addEventListener('click', closeModal, false);
-  document.addEventListener("keydown", bindeKeyEvt, false);
+  document.body.style.top = (document.documentElement.scrollTop || document.body.scrollTop) * -1 + 'px';
+  document.documentElement.classList.add('in-modal');
   // 비활성 처리 함수 호출
   setInertness(modal);
-  modal.classList.add('open');
-  placeholder.focus();
+  firstTabbaleEl.focus();
 }
 
 // 비활성 처리 함수 선언
@@ -302,7 +277,8 @@ As-Is
 ```javascript
 function closeModal (event) {
   ...
-  modal.classList.remove('open');
+  document.documentElement.classList.remove('in-modal');
+  window.scrollTo(0, scrollTop);
 }
 ```
 
@@ -311,7 +287,8 @@ To-Be
 ```javascript
 function closeModal (event) {
   ...
-  modal.classList.remove('open');
+  document.documentElement.classList.remove('in-modal');
+  window.scrollTo(0, scrollTop);
   // 비활성화 처리 해제 함수 호출
   unsetInertness();
 }
@@ -351,7 +328,8 @@ As-Is
 ```javascript
 function closeModal (event) {
   ...
-  modal.classList.remove('open');
+  document.documentElement.classList.remove('in-modal');
+  window.scrollTo(0, scrollTop);
   unsetInertness();
 }
 ```
@@ -360,7 +338,8 @@ To-Be
 ```javascript
 function closeModal (event) {
   ...
-  modal.classList.remove('open');
+  document.documentElement.classList.remove('in-modal');
+  window.scrollTo(0, scrollTop);
   unsetInertness();
   btnVoc.focus();
 }
@@ -371,7 +350,7 @@ function closeModal (event) {
 ### iOS + VoiceOver issue
 
 일단 위 단계까지 진행이 되면 어느 정도의 접근성 향상이 이루어진 상태로 마무리 될 수 있으나, 현재 알려진 몇 가지 
-이슈들이 존재하기 때문에 이를 피해야 할 필요가 있습니다.
+이슈들이 존재하기 때문에 이를 해결해야 할 필요가 있습니다.
 
 그 중 대표적인 것이 iOS safari + VoiceOver의 조합에서 대화 상자가 초기에 `display: none`으로 설정 된 경우, 
 대화 상자를 노출 시 `display: block`으로 갱신하고 프로그램적으로 초점을 대화 상자 내부로 이동시켜도 VoiceOver가 
@@ -380,10 +359,36 @@ function closeModal (event) {
 이를 해결하기 위한 방법으로 `display: none` - `display: block`을 토글하는 대신, `visibility: hidden` - 
 `visibility: visible`로 토글하는 방식을 사용할 수 있습니다.
 
-대부분 모달 대화 상자는 `position: fixed` 혹은 `position: absolute`를 사용하기 때문에 `visibility: hidden`의  DOM tree 순서에 따른 사이드 이펙트는 피해질 수 있습니다. 그럼에도 불구하고 이 부분에 대한 사이드 이펙트가 걱정 된다면 
+대부분 모달 대화 상자는 `position: fixed` 혹은 `position: absolute`를 사용하기 때문에 `visibility: hidden`의
+DOM tree 순서에 따른 사이드 이펙트는 피해질 수 있습니다. 그럼에도 불구하고 이 부분에 대한 사이드 이펙트가 걱정 된다면 
 `hidden` 속성(attribute)를 추가적으로 사용할 수 있습니다. 
 
 실습에서는 `hidden` 속성과 `visibility` 속성(property)을 사용하도록 한 번 더 수정을 가해보겠습니다.
+
+모달 대화 상자는 최초에는 `hidden` 상태이어야 하므로, Markup을 수정해줍니다.
+
+As-Is
+
+```html
+<div id="voc-dialog" class="layer-popup">
+  <div class="dialog" role="dialog" aria-label="문의 메일 작성" aria-modal="true">
+    ...
+  </div>
+</div>
+```
+
+To-Be
+
+```html
+<div id="voc-dialog" class="layer-popup" hidden>
+  <div class="dialog" role="dialog" aria-label="문의 메일 작성" aria-modal="true">
+    ...
+  </div>
+</div>
+```
+
+`hidden` 속성에 대해 브라우저들이 `display`의 기본 값으로 `none`을 가지고 있기 때문에, 이 이슈를 방지하기 위해 
+`display`의 값을 `block`으로 변경해주고 `visibility` 속성을 각 상항에 따른 값으로 설정합니다.
 
 As-Is
 
@@ -400,23 +405,16 @@ As-Is
 }
 
 .layer-popup:target,
-.layer-popup.open {
+.in-modal .layer-popup {
   display: block
 }
 ```
 
-```html
-<div id="voc-dialog" class="layer-popup">
-  <div class="dialog" role="dialog" aria-label="문의 메일 작성" aria-modal="true">
-    ...
-  </div>
-</div>
-```
-
 To-Be
 ```css
-.layer-popup {
+.layer-popup[hidden] {
   visibility: hidden;
+  display: block;
   position: fixed;
   top: 0;
   right: 0;
@@ -427,17 +425,9 @@ To-Be
 }
 
 .layer-popup:target,
-.layer-popup.open {
+.in-modal .layer-popup {
   visibility: visible
 }
-```
-
-```html
-<div id="voc-dialog" class="layer-popup" hidden>
-  <div class="dialog" role="dialog" aria-label="문의 메일 작성" aria-modal="true">
-    ...
-  </div>
-</div>
 ```
 
 `hidden` 속성이 사용되었을 때에는, JavaScript에 의해 hidden 속성을 변경해주어야 하므로 JS 파일에도 수정이 필요합니다.
@@ -448,13 +438,12 @@ As-Is
 function openModal (event) {
   ...
   setInertness(modal);
-  modal.classList.add('open');
-  placeholder.focus();
+  firstTabbaleEl.focus();
 }
 
 function closeModal (event) {
   ...
-  modal.classList.remove('open');
+  window.scrollTo(0, scrollTop);
   unsetInertness();
   btnVoc.focus();
 }
@@ -467,13 +456,12 @@ function openModal (event) {
   ...
   setInertness(modal);
   modal.hidden = false;
-  modal.classList.add('open');
-  placeholder.focus();
+  firstTabbaleEl.focus();
 }
 
 function closeModal (event) {
   ...
-  modal.classList.remove('open');
+  window.scrollTo(0, scrollTop);
   modal.hidden = true;
   unsetInertness();
   btnVoc.focus();
