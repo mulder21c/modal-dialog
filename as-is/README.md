@@ -54,7 +54,7 @@
 ## 과거의 접근성 해결 방법
 
 - 링크(버튼)에 title 속성(attribute)을 이용하여 추가 정보 제공
-  
+
     ```
     <a href="#voc-dialog" title="레이어 팝업">고객문의</a>
     ```
@@ -69,4 +69,7 @@
 - 대화 상자를 벗어나 배경 페이지로 이어지는 스크린리더 문서 탐색
 - 대화 상자의 마크업을 링크(버튼) 바로 이후로 위치시키기 어려운 상황 발생
 
-<video src="../video/nvda-test.webm" width="100%" controls="controls"></video>
+<video width="100%" controls preload="metadata">
+  <source src="../video/nvda-test.webm" type="video/mp4">
+  <track label="Korean" kind="subtitles" srclang="ko" src="../video/nvda-test.vtt" default>
+</video>

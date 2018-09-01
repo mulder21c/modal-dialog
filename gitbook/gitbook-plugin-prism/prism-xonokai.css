@@ -2,3 +2,5 @@ code[class*="language-"],pre[class*="language-"]{-moz-tab-size:2;-o-tab-size:2;t
 .markdown-section pre>code{font-size: inherit;}
 @media only screen and (min-width:624px){::-webkit-scrollbar{width:10px;height:8px}}@media only screen and (max-width:624px){::-webkit-scrollbar{width:5px;height:5px}}::-webkit-scrollbar-track{border-radius:5px}::-webkit-scrollbar-thumb{height:1px;border:2px solid transparent;border-radius:6px;background-clip:padding-box;background:hsla(0,0%,60%,.5)}
 .navigation{display: none}
+::cue {color: papayawhip; font-size: 1.25em; line-height: 1.55;}
+::cue(.key) {color: #2a2a2a; background-color: rgba(244, 235, 56, 0.7);font-size: 2em; outline: 0}
